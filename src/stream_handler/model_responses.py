@@ -13,5 +13,6 @@ class   ModelResponseHandler:
                         yield event.text
             else:
                 raise Exception(f"Unsupported model or no output available. {model_name} {stream}")
-        except Exception:
+        except Exception as e:
+            print(repr(e))
             yield ""
